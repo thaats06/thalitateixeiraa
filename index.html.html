@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AgroEquilíbrio</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:#f8f6f1;
+  color:#2b2b2b;
+  line-height:1.7;
+}
+
+/* HEADER */
+
+header{
+  text-align:center;
+  padding:20px 20px;
+  background:#1b4332;
+  color:white;
+}
+
+.logo{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo img{
+  height:300px;
+  margin-bottom:-25px;
+}
+
+.logo h1{
+  margin:0;
+  font-size:42px;
+}
+
+.logo p{
+  margin-top:5px;
+  font-size:18px;
+}
+
+/* MENU */
+
+nav{
+  background:#a3b18a;
+  text-align:center;
+  padding:12px;
+}
+
+nav button{
+  margin:5px;
+  padding:10px 16px;
+  border:none;
+  border-radius:20px;
+  background:#fefae0;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:15px;
+}
+
+nav button:hover{
+  transform:scale(1.05);
+}
+
+/* SEÇÕES */
+
+section{
+  display:none;
+  padding:50px 20px;
+  max-width:950px;
+  margin:auto;
+}
+
+.ativo{
+  display:block;
+}
+
+/* ANIMAÇÃO */
+
+.animar{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s;
+}
+
+.animar.visivel{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* CARDS */
+
+.card{
+  background:white;
+  padding:30px;
+  margin:25px 0;
+  border-radius:15px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+h2{
+  color:#2d6a4f;
+}
+
+h3{
+  color:#40916c;
+  margin-top:25px;
+}
+
+/* SELECT */
+
+select{
+  width:100%;
+  max-width:420px;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+/* BOTÃO */
+
+.opcao{
+  margin-top:30px;
+  padding:14px 22px;
+  border:none;
+  border-radius:10px;
+  background:#588157;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.opcao:hover{
+  transform:scale(1.05);
+}
+
+/* BARRA */
+
+.barra{
+  height:22px;
+  background:#ddd;
+  border-radius:20px;
+  margin-top:25px;
+  overflow:hidden;
+}
+
+.progresso{
+  height:22px;
+  width:0%;
+  background:#40916c;
+  border-radius:20px;
+  transition:0.5s;
+}
+
+/* RESULTADO */
+
+#resultado{
+  margin-top:25px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* RODAPÉ */
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#1b4332;
+  color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+
+    <img src="logo.png">
+
+    <h1>AgroEquilíbrio</h1>
+
+    <p>Produção e sustentabilidade em harmonia</p>
+
+  </div>
+
+</header>
+
+<nav>
+
+  <button onclick="mostrar('inicio')">Início</button>
+
+  <button onclick="mostrar('conteudo')">Conteúdo</button>
+
+  <button onclick="mostrar('simulador')">Diagnóstico</button>
+
+</nav>
+
+<section id="inicio" class="ativo">
+
+  <div class="card animar">
+
+    <h2>🌎 Introdução</h2>
+
+    <p>
+      A agricultura faz parte da vida de toda a sociedade, sendo responsável
+      pela produção de alimentos, matérias-primas e geração de empregos.
+      O trabalho realizado no campo influencia diretamente a economia
+      e o abastecimento das cidades.
+    </p>
+
+    <p>
+      Com o avanço da tecnologia e o aumento da produção agrícola,
+      surgiram também desafios relacionados ao meio ambiente,
+      como desperdício de água, desgaste do solo e desmatamento.
+      Por isso, tornou-se necessário buscar formas de produzir
+      com mais equilíbrio e responsabilidade.
+    </p>
+
+    <p>
+      A sustentabilidade na agricultura representa justamente essa busca
+      por equilíbrio, incentivando práticas que respeitem os recursos naturais
+      e garantam uma produção mais consciente para o presente e o futuro.
+    </p>
+
+  </div>
+
+  <div class="card animar">
+
+    <h2>🎯 Objetivo do Projeto</h2>
+
+    <p>
+      Este projeto tem como objetivo apresentar a importância da sustentabilidade
+      no meio rural e mostrar como pequenas ações podem contribuir para uma
+      agricultura mais eficiente e responsável.
+    </p>
+
+    <p>
+      Além de fornecer informações sobre práticas sustentáveis,
+      o projeto também utiliza recursos de programação para criar
+      uma experiência interativa, aproximando tecnologia e conscientização ambiental.
+    </p>
+
+    <p>
+      O diagnóstico desenvolvido no site permite analisar práticas agrícolas
+      e refletir sobre escolhas que ajudam a conservar os recursos naturais
+      e melhorar a qualidade da produção.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="conteudo">
+
+  <div class="card animar">
+
+    <h2>🌱 Agricultura Sustentável</h2>
+
+    <p>
+      A agricultura sustentável é baseada no uso responsável dos recursos naturais,
+      buscando produzir alimentos de maneira eficiente sem causar grandes prejuízos
+      ao meio ambiente.
+    </p>
+
+    <p>
+      Esse modelo agrícola valoriza a conservação do solo,
+      o uso equilibrado da água e a redução de desperdícios.
+      Também incentiva práticas que ajudam a manter a fertilidade da terra
+      e a biodiversidade.
+    </p>
+
+    <p>
+      Além dos benefícios ambientais,
+      a sustentabilidade no campo também contribui para uma produção mais saudável
+      e para melhores condições de vida no meio rural.
+    </p>
+
+  </div>
+
+  <div class="card animar">
+
+    <h2>🌾 Técnicas Sustentáveis</h2>
+
+    <p>
+      Diversas técnicas podem tornar a produção agrícola mais equilibrada e eficiente.
+      A rotação de culturas, por exemplo,
+      ajuda a preservar os nutrientes do solo
+      e reduz o desgaste causado pelo plantio repetitivo.
+    </p>
+
+    <p>
+      A irrigação eficiente evita desperdícios de água
+      e melhora o aproveitamento hídrico nas plantações.
+      Já o controle biológico de pragas utiliza métodos naturais
+      para diminuir o uso excessivo de produtos químicos.
+    </p>
+
+    <p>
+      Outras ações importantes incluem a preservação de áreas verdes,
+      o reaproveitamento de recursos e o uso de tecnologias
+      que auxiliam na redução dos impactos ambientais.
+    </p>
+
+  </div>
+
+  <div class="card animar">
+
+    <h2>⚠️ Impactos Ambientais</h2>
+
+    <p>
+      Quando não há planejamento adequado,
+      a produção agrícola pode causar diversos problemas ambientais.
+      Entre os principais impactos estão o desmatamento,
+      a erosão do solo e a contaminação da água.
+    </p>
+
+    <p>
+      O uso excessivo de agrotóxicos e o desperdício de recursos naturais
+      também prejudicam a biodiversidade e afetam o equilíbrio ambiental.
+      Além disso, essas ações podem gerar consequências negativas
+      para a saúde humana e para a qualidade dos alimentos.
+    </p>
+
+    <p>
+      Esses problemas mostram a importância de adotar práticas agrícolas
+      mais conscientes e sustentáveis.
+    </p>
+
+  </div>
+
+  <div class="card animar">
+
+    <h2>🌐 Sustentabilidade e Tecnologia</h2>
+
+    <p>
+      A tecnologia tem contribuído cada vez mais para o desenvolvimento
+      de uma agricultura mais moderna e sustentável.
+      Atualmente, diversos recursos tecnológicos ajudam produtores
+      a reduzir desperdícios e aumentar a eficiência da produção.
+    </p>
+
+    <p>
+      Sistemas de irrigação inteligente, sensores de umidade,
+      drones agrícolas e monitoramento digital permitem maior controle
+      sobre o uso da água, do solo e dos recursos naturais.
+      Essas ferramentas auxiliam na tomada de decisões
+      e ajudam a evitar impactos ambientais desnecessários.
+    </p>
+
+    <p>
+      A união entre sustentabilidade e tecnologia demonstra que inovação
+      e preservação ambiental podem caminhar juntas,
+      promovendo uma agricultura mais eficiente,
+      consciente e preparada para o futuro.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="simulador">
+
+  <div class="card animar">
+
+    <h2>📊 Diagnóstico de Sustentabilidade Rural</h2>
+
+    <p>
+      O diagnóstico abaixo permite analisar o nível de sustentabilidade
+      de uma produção agrícola com base nas práticas utilizadas no campo.
+      Selecione as opções que mais representam a propriedade analisada.
+    </p>
+
+    <hr><br>
+
+    <h3>🌱 Manejo do Solo</h3>
+
+    <label>
+
+      Rotação de culturas:
+
+      <select id="solo">
+        <option value="0">Não utiliza</option>
+        <option value="2">Utiliza parcialmente</option>
+        <option value="4">Utiliza frequentemente</option>
+      </select>
+
+    </label>
+
+    <h3>💧 Uso da Água</h3>
+
+    <label>
+
+      Sistema de irrigação:
+
+      <select id="agua">
+        <option value="0">Uso excessivo</option>
+        <option value="2">Controle moderado</option>
+        <option value="4">Irrigação eficiente</option>
+      </select>
+
+    </label>
+
+    <h3>🐞 Controle de Pragas</h3>
+
+    <label>
+
+      Método utilizado:
+
+      <select id="pragas">
+        <option value="0">Agrotóxicos intensivos</option>
+        <option value="2">Uso reduzido</option>
+        <option value="4">Controle biológico/natural</option>
+      </select>
+
+    </label>
+
+    <h3>🌳 Preservação Ambiental</h3>
+
+    <label>
+
+      Áreas verdes preservadas:
+
+      <select id="ambiente">
+        <option value="0">Não preserva</option>
+        <option value="2">Preserva parcialmente</option>
+        <option value="4">Preserva adequadamente</option>
+      </select>
+
+    </label>
+
+    <h3>⚡ Tecnologia Sustentável</h3>
+
+    <label>
+
+      Uso de tecnologias sustentáveis:
+
+      <select id="tecnologia">
+        <option value="0">Não utiliza</option>
+        <option value="2">Utiliza algumas</option>
+        <option value="4">Utiliza frequentemente</option>
+      </select>
+
+    </label>
+
+    <button class="opcao" onclick="calcular()">
+      Gerar Diagnóstico
+    </button>
+
+    <div class="barra">
+      <div id="barra" class="progresso"></div>
+    </div>
+
+    <p id="resultado"></p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  Projeto Agrinho • Desenvolvido por Thalita Teixeira da Silva
+
+</footer>
+
+<script>
+
+function mostrar(secao){
+
+  document.querySelectorAll("section").forEach(secaoItem => {
+    secaoItem.classList.remove("ativo");
+  });
+
+  document.getElementById(secao).classList.add("ativo");
+}
+
+function calcular(){
+
+  let solo =
+  Number(document.getElementById("solo").value);
+
+  let agua =
+  Number(document.getElementById("agua").value);
+
+  let pragas =
+  Number(document.getElementById("pragas").value);
+
+  let ambiente =
+  Number(document.getElementById("ambiente").value);
+
+  let tecnologia =
+  Number(document.getElementById("tecnologia").value);
+
+  let pontos =
+  solo + agua + pragas + ambiente + tecnologia;
+
+  let porcentagem =
+  (pontos / 20) * 100;
+
+  document.getElementById("barra").style.width =
+  porcentagem + "%";
+
+  let resultado =
+  document.getElementById("resultado");
+
+  if(pontos >= 16){
+
+    resultado.innerHTML =
+    "🌎 <strong>Resultado: Excelente nível de sustentabilidade.</strong><br><br>" +
+    "A produção agrícola apresenta práticas conscientes e equilibradas, demonstrando preocupação com os recursos naturais e com a preservação ambiental.";
+
+  }
+
+  else if(pontos >= 10){
+
+    resultado.innerHTML =
+    "🌱 <strong>Resultado: Sustentabilidade moderada.</strong><br><br>" +
+    "A propriedade já utiliza algumas práticas sustentáveis importantes, mas ainda pode investir em melhorias para reduzir impactos ambientais.";
+
+  }
+
+  else{
+
+    resultado.innerHTML =
+    "⚠️ <strong>Resultado: Baixo nível de sustentabilidade.</strong><br><br>" +
+    "A produção agrícola necessita adotar práticas mais sustentáveis para diminuir impactos ambientais e melhorar o aproveitamento dos recursos naturais.";
+
+  }
+
+}
+
+/* ANIMAÇÃO */
+
+window.addEventListener("scroll", ()=>{
+
+  document.querySelectorAll(".animar").forEach(el=>{
+
+    const pos = el.getBoundingClientRect().top;
+
+    if(pos < window.innerHeight - 50){
+
+      el.classList.add("visivel");
+
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
